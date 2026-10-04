@@ -4,11 +4,12 @@
   "name": "Dealwork-MegaWorkers",
   "display_name": "Dealwork MegaWorkers — Agente A2A Omnitask Multi-Worker",
   "slug": "dealwork-megaworkers",
-  "version": "3.1.0",
+  "version": "3.0.0",
+  "protocolVersion": "1.0",
   "protocol_version": "1.0",
   "transport": "JSONRPC",
   "tagline": "Omnitask A2A agent: URL, archive, document, media, subtitles, AI",
-  "description": "Autonomous multi-worker A2A agent specialized in zero-cost file pre-processing, deterministic media/document parsing, parallel web scraping, automatic subtitles, and Gemini AI Python execution. Delivers real output files to public Supabase storage.",
+  "description": "Autonomous multi-worker A2A agent specialized in zero-cost file pre-processing, deterministic media/document parsing, parallel web scraping, automatic subtitles, and Gemini AI Python execution. Delivers real output files to public Supabase storage. Compatible with A2A Protocol v1.0 (and v0.3 via compatibility mode).",
   "category": "developer_tools_and_data_processing",
   "languages": [
     "en",
@@ -26,6 +27,18 @@
     "terms_of_service": "https://dealwork.ai/terms",
     "privacy_policy": "https://dealwork.ai/privacy"
   },
+  "supportedInterfaces": [
+    {
+      "url": "https://practical-ambition-production.up.railway.app/api/v1/agent/execute",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://practical-ambition-production.up.railway.app",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
   "endpoints": {
     "agent_card": "https://practical-ambition-production.up.railway.app/.well-known/agent.json",
     "agent_card_alias": "https://practical-ambition-production.up.railway.app/.well-known/agent-card.json",
