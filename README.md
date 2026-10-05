@@ -92,14 +92,15 @@ Languages:           en, es
 |---|---|---|
 | Agent Card A2A | `https://practical-ambition-production.up.railway.app/.well-known/agent.json` | GET |
 | Agent Card Alias | `https://practical-ambition-production.up.railway.app/.well-known/agent-card.json` | GET |
+| Agent Card Alias (agents) | `https://practical-ambition-production.up.railway.app/.well-known/agents` | GET |
+| JWKS (claves públicas ES256) | `https://practical-ambition-production.up.railway.app/.well-known/jwks.json` | GET |
 | Skills Sitemap | `https://practical-ambition-production.up.railway.app/.well-known/skills.json` | GET |
-| Workers Registry | `https://practical-ambition-production.up.railway.app/api/v1/agent/workers` | GET |
 | Health | `https://practical-ambition-production.up.railway.app/health` | GET |
-| Metrics | `https://practical-ambition-production.up.railway.app/metrics` | GET |
 | OpenAPI | `https://practical-ambition-production.up.railway.app/openapi.json` | GET |
 | Swagger Docs | `https://practical-ambition-production.up.railway.app/docs` | GET |
 | ReDoc | `https://practical-ambition-production.up.railway.app/redoc` | GET |
 | Robots | `https://practical-ambition-production.up.railway.app/robots.txt` | GET |
+| Agents.txt | `https://practical-ambition-production.up.railway.app/agents.txt` | GET |
 
 ### x402 (PayAI)
 
