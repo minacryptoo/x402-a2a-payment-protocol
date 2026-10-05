@@ -5,28 +5,28 @@
   "display_name": "Dealwork MegaWorkers — Agente A2A Omnitask Multi-Worker",
   "slug": "dealwork-megaworkers",
   "version": "3.0.0",
-  "protocolVersion": "1.0",
-  "protocol_version": "1.0",
-  "transport": "JSONRPC",
   "tagline": "Omnitask A2A agent: URL, archive, document, media, subtitles, AI",
   "description": "Autonomous multi-worker A2A agent specialized in zero-cost file pre-processing, deterministic media/document parsing, parallel web scraping, automatic subtitles, and Gemini AI Python execution. Delivers real output files to public Supabase storage. Compatible with A2A Protocol v1.0 (and v0.3 via compatibility mode).",
   "category": "developer_tools_and_data_processing",
-  "languages": [
-    "en",
-    "es"
-  ],
-  "url": "https://practical-ambition-production.up.railway.app",
+  "languages": ["en", "es"],
   "icon": "https://dealwork.ai/static/icon.png",
   "provider": {
-    "name": "Dealwork",
-    "url": "https://dealwork.ai",
-    "email": "agents@dealwork.ai",
+    "organization": "Dealwork",
+    "url": "https://aethercomput.pages.dev",
+    "email": "Manu_shop@icloud.com",
     "contact_person": "Manu_shop@icloud.com",
-    "support_url": "https://t.me/dealwork_agents",
+    "support_url": "https://aethercomput.pages.dev",
     "github": "https://github.com/minacryptoo/Dealwork-toloka-prod",
     "terms_of_service": "https://dealwork.ai/terms",
     "privacy_policy": "https://dealwork.ai/privacy"
   },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": true,
+    "extensions": []
+  },
+  "defaultInputModes": ["text/plain", "application/json", "multipart/form-data"],
+  "defaultOutputModes": ["application/json", "text/plain", "text/markdown", "text/srt", "audio/mpeg", "video/mp4"],
   "supportedInterfaces": [
     {
       "url": "https://practical-ambition-production.up.railway.app/api/v1/agent/execute",
@@ -85,14 +85,7 @@
     {
       "id": "url_worker",
       "name": "Bulk URL Checker & Scraper",
-      "tags": [
-        "url",
-        "scraper",
-        "bulk",
-        "http",
-        "metadata",
-        "seo"
-      ],
+      "tags": ["url", "scraper", "bulk", "http", "metadata", "seo"],
       "limits": {
         "max_urls": 5000,
         "timeout": 300,
@@ -102,15 +95,7 @@
     {
       "id": "archive_worker",
       "name": "Archive Decompression & Tree Inspection",
-      "tags": [
-        "zip",
-        "tar",
-        "archive",
-        "decompress",
-        "tree",
-        "7z",
-        "rar"
-      ],
+      "tags": ["zip", "tar", "archive", "decompress", "tree", "7z", "rar"],
       "limits": {
         "max_file_size_mb": 200,
         "timeout": 120
@@ -119,15 +104,7 @@
     {
       "id": "document_worker",
       "name": "Document & Code Parsing",
-      "tags": [
-        "pdf",
-        "markdown",
-        "json",
-        "csv",
-        "yaml",
-        "docx",
-        "conversion"
-      ],
+      "tags": ["pdf", "markdown", "json", "csv", "yaml", "docx", "conversion"],
       "limits": {
         "max_file_size_mb": 50,
         "timeout": 60
@@ -136,15 +113,7 @@
     {
       "id": "media_worker",
       "name": "FFmpeg Media Transcoding & Audio Extraction",
-      "tags": [
-        "ffmpeg",
-        "audio",
-        "video",
-        "transcode",
-        "mp3",
-        "mp4",
-        "trim"
-      ],
+      "tags": ["ffmpeg", "audio", "video", "transcode", "mp3", "mp4", "trim"],
       "limits": {
         "max_file_size_mb": 500,
         "timeout": 300,
@@ -154,13 +123,7 @@
     {
       "id": "subtitles_worker",
       "name": "Automatic Video Subtitles (Vosk)",
-      "tags": [
-        "subtitles",
-        "srt",
-        "vosk",
-        "video",
-        "captioning"
-      ],
+      "tags": ["subtitles", "srt", "vosk", "video", "captioning"],
       "limits": {
         "timeout": 900,
         "processing_speed": "10-20s per video minute"
@@ -169,13 +132,7 @@
     {
       "id": "split_subtitles_worker",
       "name": "Video Splitter with Subtitles",
-      "tags": [
-        "split_video",
-        "video_parts",
-        "chunk_subtitles",
-        "drawtext",
-        "ffmpeg"
-      ],
+      "tags": ["split_video", "video_parts", "chunk_subtitles", "drawtext", "ffmpeg"],
       "limits": {
         "timeout": 900,
         "max_parts": 50
@@ -184,14 +141,7 @@
     {
       "id": "ai_worker",
       "name": "Gemini AI Text/Code Generation",
-      "tags": [
-        "gemini",
-        "llm",
-        "writing",
-        "research",
-        "code",
-        "translation"
-      ],
+      "tags": ["gemini", "llm", "writing", "research", "code", "translation"],
       "limits": {
         "max_input_chars": 200000,
         "timeout": 120,
@@ -201,16 +151,111 @@
     {
       "id": "gemini_generalist_worker",
       "name": "Gemini Generalist / Reasoning Fallback",
-      "tags": [
-        "reasoning",
-        "fallback",
-        "custom_logic"
-      ],
+      "tags": ["reasoning", "fallback", "custom_logic"],
       "limits": {
         "max_input_chars": 100000,
         "timeout": 120,
         "rate_limit_rpm": 30
       }
+    }
+  ],
+  "skills": [
+    {
+      "id": "url_checker",
+      "name": "Bulk URL Checker & Scraper",
+      "description": "Checks HTTP status, redirects, response time and page metadata for up to 5000 URLs in parallel, with bulk scraping for SEO audits. Returns structured JSON reports per URL.",
+      "tags": ["url", "scraper", "bulk", "http", "metadata", "seo"],
+      "examples": [
+        "Check the status of these 200 URLs and report any 404s",
+        "Scrape title, description and headers of these pages for an SEO audit"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["application/json", "text/plain"]
+    },
+    {
+      "id": "archive_extractor",
+      "name": "Archive Decompression & Tree Inspection",
+      "description": "Decompresses ZIP, TAR, 7z and RAR archives up to 200 MB and returns the full file tree inspection without extracting secrets or executing anything.",
+      "tags": ["zip", "tar", "archive", "decompress", "tree", "7z", "rar"],
+      "examples": [
+        "List the full directory tree of this ZIP file",
+        "Check if this 7z archive is corrupted and what it contains"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["application/json", "text/plain"]
+    },
+    {
+      "id": "document_parser",
+      "name": "Document & Code Parsing",
+      "description": "Deterministic parsing and conversion of PDF, DOCX, CSV, JSON, YAML and code files (up to 50 MB) to Markdown or JSON for RAG pipelines and LLM token optimization.",
+      "tags": ["pdf", "markdown", "json", "csv", "yaml", "docx", "conversion"],
+      "examples": [
+        "Convert this PDF to clean Markdown for my RAG pipeline",
+        "Convert this CSV to JSON"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["text/markdown", "application/json", "text/plain"]
+    },
+    {
+      "id": "media_transcoder",
+      "name": "FFmpeg Media Transcoding & Audio Extraction",
+      "description": "Transcodes, trims and extracts audio from audio/video files up to 500 MB using FFmpeg. Delivers real output files as public URLs in Supabase storage.",
+      "tags": ["ffmpeg", "audio", "video", "transcode", "mp3", "mp4", "trim"],
+      "examples": [
+        "Extract the audio track of this MP4 as MP3",
+        "Trim the first 60 seconds of this video and transcode it to MP4"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["video/mp4", "audio/mpeg", "application/json"]
+    },
+    {
+      "id": "subtitle_generator",
+      "name": "Automatic Video Subtitles",
+      "description": "Generates SRT subtitles automatically from any video using Vosk offline speech recognition, at roughly 10-20 seconds of processing per video minute.",
+      "tags": ["subtitles", "srt", "vosk", "video", "captioning"],
+      "examples": [
+        "Generate English SRT subtitles for this 10-minute video",
+        "Transcribe this video and give me the .srt file"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["text/srt", "application/json"]
+    },
+    {
+      "id": "video_splitter_subtitles",
+      "name": "Video Splitter with Subtitles",
+      "description": "Splits long videos into up to 50 parts and burns chunked subtitles into each part using FFmpeg drawtext. Delivers all parts as public URLs.",
+      "tags": ["split_video", "video_parts", "chunk_subtitles", "drawtext", "ffmpeg"],
+      "examples": [
+        "Split this 1-hour video into 5-minute parts with subtitles",
+        "Cut this video into 10 parts and embed the subtitles in each one"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["video/mp4", "application/json"]
+    },
+    {
+      "id": "ai_generator",
+      "name": "Gemini AI Text/Code Generation",
+      "description": "Gemini-powered text and code generation: research memos with citations, translation, code review and long-form content writing, with up to 200,000 input characters.",
+      "tags": ["gemini", "llm", "writing", "research", "code", "translation"],
+      "examples": [
+        "Write a 1000-word research memo about A2A protocol with citations",
+        "Translate this document from English to Spanish",
+        "Review this Python script and suggest improvements"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/markdown", "text/plain", "application/json"]
+    },
+    {
+      "id": "gemini_generalist",
+      "name": "Gemini Generalist / Reasoning Fallback",
+      "description": "Gemini generalist and reasoning fallback for custom-logic tasks that do not fit any specialized worker, with up to 100,000 input characters.",
+      "tags": ["reasoning", "fallback", "custom_logic"],
+      "examples": [
+        "Analyze this data and decide which worker should process it",
+        "Answer this multi-step reasoning question"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/markdown", "text/plain", "application/json"]
     }
   ],
   "output_delivery": {
@@ -267,7 +312,19 @@
       "status": "supervisor_active"
     }
   },
-  "security": {
+  "securitySchemes": {
+    "hmac_signature": {
+      "type": "apiKey",
+      "location": "header",
+      "name": "X-AgenticMarket-Signature",
+      "description": "Optional HMAC-SHA256 request signature: v1=hex(HMAC-SHA256(ts + body)) sent in X-AgenticMarket-Signature with the timestamp in X-AgenticMarket-Timestamp. Enforcement can be enabled server-side via AGENTIC_MARKET_REQUIRE_SIGNED=1."
+    }
+  },
+  "security": [
+    {},
+    { "hmac_signature": [] }
+  ],
+  "security_notes": {
     "auth": "open (A2A public layer)",
     "optional_hmac_signature": {
       "enabled": false,
@@ -351,5 +408,12 @@
       "Automated research memos with citations",
       "Pay-per-task x402 micropayments via PayAI"
     ]
-  }
+  },
+  "documentationUrl": "https://practical-ambition-production.up.railway.app/docs",
+  "signatures": [
+    {
+      "protected": "eyJhbGciOiJFUzI1NiIsImprdSI6Imh0dHBzOi8vcHJhY3RpY2FsLWFtYml0aW9uLXByb2R1Y3Rpb24udXAucmFpbHdheS5hcHAvLndlbGwta25vd24vandrcy5qc29uIiwia2lkIjoiQVhCQk9nYnREM0M5bG5ZbSIsInR5cCI6IkpPU0UifQ",
+      "signature": "6RBWGoqLcVPlP8ro4VidK5GrmIHw1UHXEMe9Fp_jdmKw6EzVKojg7NPT6-S0MAJOAPypqsiAXS9zG2Xog27PoA"
+    }
+  ]
 }
