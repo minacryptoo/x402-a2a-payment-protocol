@@ -1,0 +1,419 @@
+{
+  "$schema": "https://a2aregistry.org/schemas/v1/agent-card.json",
+  "id": "did:web:dealwork.ai:megaworkers",
+  "name": "Dealwork-MegaWorkers",
+  "display_name": "Dealwork MegaWorkers — Agente A2A Omnitask Multi-Worker",
+  "slug": "dealwork-megaworkers",
+  "version": "3.0.0",
+  "tagline": "Omnitask A2A agent: URL, archive, document, media, subtitles, AI",
+  "description": "Autonomous multi-worker A2A agent specialized in zero-cost file pre-processing, deterministic media/document parsing, parallel web scraping, automatic subtitles, and Gemini AI Python execution. Delivers real output files to public Supabase storage. Compatible with A2A Protocol v1.0 (and v0.3 via compatibility mode).",
+  "category": "developer_tools_and_data_processing",
+  "languages": ["en", "es"],
+  "icon": "https://dealwork.ai/static/icon.png",
+  "provider": {
+    "organization": "Dealwork",
+    "url": "https://aethercomput.pages.dev",
+    "email": "Manu_shop@icloud.com",
+    "contact_person": "Manu_shop@icloud.com",
+    "support_url": "https://aethercomput.pages.dev",
+    "github": "https://github.com/minacryptoo/Dealwork-toloka-prod",
+    "terms_of_service": "https://dealwork.ai/terms",
+    "privacy_policy": "https://dealwork.ai/privacy"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": true,
+    "extensions": []
+  },
+  "defaultInputModes": ["text/plain", "application/json", "multipart/form-data"],
+  "defaultOutputModes": ["application/json", "text/plain", "text/markdown", "text/srt", "audio/mpeg", "video/mp4"],
+  "supportedInterfaces": [
+    {
+      "url": "https://practical-ambition-production.up.railway.app/api/v1/agent/execute",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://practical-ambition-production.up.railway.app",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "endpoints": {
+    "agent_card": "https://practical-ambition-production.up.railway.app/.well-known/agent.json",
+    "agent_card_alias": "https://practical-ambition-production.up.railway.app/.well-known/agent-card.json",
+    "llms_txt": "https://practical-ambition-production.up.railway.app/llms.txt",
+    "skills_sitemap": "https://practical-ambition-production.up.railway.app/.well-known/skills.json",
+    "execute": "https://practical-ambition-production.up.railway.app/api/v1/agent/execute",
+    "upload": "https://practical-ambition-production.up.railway.app/api/v1/agent/upload",
+    "task_status": "https://practical-ambition-production.up.railway.app/api/v1/tasks/{task_id}",
+    "task_cancel": "https://practical-ambition-production.up.railway.app/api/v1/tasks/{task_id}/cancel",
+    "workers_registry": "https://practical-ambition-production.up.railway.app/api/v1/agent/workers",
+    "health": "https://practical-ambition-production.up.railway.app/health",
+    "metrics": "https://practical-ambition-production.up.railway.app/metrics",
+    "openapi": "https://practical-ambition-production.up.railway.app/openapi.json",
+    "robots": "https://practical-ambition-production.up.railway.app/robots.txt",
+    "swagger_docs": "https://practical-ambition-production.up.railway.app/docs",
+    "redoc_docs": "https://practical-ambition-production.up.railway.app/redoc"
+  },
+  "payments": {
+    "protocol": "x402",
+    "version": 1,
+    "facilitator": "https://facilitator.payai.network",
+    "scheme": "exact",
+    "price_per_task": {
+      "amount": "0.01",
+      "currency": "USDC",
+      "raw_units": "10000"
+    },
+    "default_network": "base",
+    "chain_id": "eip155:8453",
+    "wallets": {
+      "evm": "0xdE732Ef88Eabd42e6510a38c2D191B74FD566C0B",
+      "solana": "EKf6HPb72XWeKzBCdpo2dy25mW325rSkNg2a89RFG34z"
+    },
+    "usdc_contracts": {
+      "base": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "ethereum": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "polygon": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "arbitrum": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+      "optimism": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+      "solana": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+    }
+  },
+  "workers": [
+    {
+      "id": "url_worker",
+      "name": "Bulk URL Checker & Scraper",
+      "tags": ["url", "scraper", "bulk", "http", "metadata", "seo"],
+      "limits": {
+        "max_urls": 5000,
+        "timeout": 300,
+        "rate_limit_rpm": 60
+      }
+    },
+    {
+      "id": "archive_worker",
+      "name": "Archive Decompression & Tree Inspection",
+      "tags": ["zip", "tar", "archive", "decompress", "tree", "7z", "rar"],
+      "limits": {
+        "max_file_size_mb": 200,
+        "timeout": 120
+      }
+    },
+    {
+      "id": "document_worker",
+      "name": "Document & Code Parsing",
+      "tags": ["pdf", "markdown", "json", "csv", "yaml", "docx", "conversion"],
+      "limits": {
+        "max_file_size_mb": 50,
+        "timeout": 60
+      }
+    },
+    {
+      "id": "media_worker",
+      "name": "FFmpeg Media Transcoding & Audio Extraction",
+      "tags": ["ffmpeg", "audio", "video", "transcode", "mp3", "mp4", "trim"],
+      "limits": {
+        "max_file_size_mb": 500,
+        "timeout": 300,
+        "max_concurrent": 2
+      }
+    },
+    {
+      "id": "subtitles_worker",
+      "name": "Automatic Video Subtitles (Vosk)",
+      "tags": ["subtitles", "srt", "vosk", "video", "captioning"],
+      "limits": {
+        "timeout": 900,
+        "processing_speed": "10-20s per video minute"
+      }
+    },
+    {
+      "id": "split_subtitles_worker",
+      "name": "Video Splitter with Subtitles",
+      "tags": ["split_video", "video_parts", "chunk_subtitles", "drawtext", "ffmpeg"],
+      "limits": {
+        "timeout": 900,
+        "max_parts": 50
+      }
+    },
+    {
+      "id": "ai_worker",
+      "name": "Gemini AI Text/Code Generation",
+      "tags": ["gemini", "llm", "writing", "research", "code", "translation"],
+      "limits": {
+        "max_input_chars": 200000,
+        "timeout": 120,
+        "rate_limit_rpm": 60
+      }
+    },
+    {
+      "id": "gemini_generalist_worker",
+      "name": "Gemini Generalist / Reasoning Fallback",
+      "tags": ["reasoning", "fallback", "custom_logic"],
+      "limits": {
+        "max_input_chars": 100000,
+        "timeout": 120,
+        "rate_limit_rpm": 30
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "url_checker",
+      "name": "Bulk URL Checker & Scraper",
+      "description": "Checks HTTP status, redirects, response time and page metadata for up to 5000 URLs in parallel, with bulk scraping for SEO audits. Returns structured JSON reports per URL.",
+      "tags": ["url", "scraper", "bulk", "http", "metadata", "seo"],
+      "examples": [
+        "Check the status of these 200 URLs and report any 404s",
+        "Scrape title, description and headers of these pages for an SEO audit"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["application/json", "text/plain"]
+    },
+    {
+      "id": "archive_extractor",
+      "name": "Archive Decompression & Tree Inspection",
+      "description": "Decompresses ZIP, TAR, 7z and RAR archives up to 200 MB and returns the full file tree inspection without extracting secrets or executing anything.",
+      "tags": ["zip", "tar", "archive", "decompress", "tree", "7z", "rar"],
+      "examples": [
+        "List the full directory tree of this ZIP file",
+        "Check if this 7z archive is corrupted and what it contains"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["application/json", "text/plain"]
+    },
+    {
+      "id": "document_parser",
+      "name": "Document & Code Parsing",
+      "description": "Deterministic parsing and conversion of PDF, DOCX, CSV, JSON, YAML and code files (up to 50 MB) to Markdown or JSON for RAG pipelines and LLM token optimization.",
+      "tags": ["pdf", "markdown", "json", "csv", "yaml", "docx", "conversion"],
+      "examples": [
+        "Convert this PDF to clean Markdown for my RAG pipeline",
+        "Convert this CSV to JSON"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["text/markdown", "application/json", "text/plain"]
+    },
+    {
+      "id": "media_transcoder",
+      "name": "FFmpeg Media Transcoding & Audio Extraction",
+      "description": "Transcodes, trims and extracts audio from audio/video files up to 500 MB using FFmpeg. Delivers real output files as public URLs in Supabase storage.",
+      "tags": ["ffmpeg", "audio", "video", "transcode", "mp3", "mp4", "trim"],
+      "examples": [
+        "Extract the audio track of this MP4 as MP3",
+        "Trim the first 60 seconds of this video and transcode it to MP4"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["video/mp4", "audio/mpeg", "application/json"]
+    },
+    {
+      "id": "subtitle_generator",
+      "name": "Automatic Video Subtitles",
+      "description": "Generates SRT subtitles automatically from any video using Vosk offline speech recognition, at roughly 10-20 seconds of processing per video minute.",
+      "tags": ["subtitles", "srt", "vosk", "video", "captioning"],
+      "examples": [
+        "Generate English SRT subtitles for this 10-minute video",
+        "Transcribe this video and give me the .srt file"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["text/srt", "application/json"]
+    },
+    {
+      "id": "video_splitter_subtitles",
+      "name": "Video Splitter with Subtitles",
+      "description": "Splits long videos into up to 50 parts and burns chunked subtitles into each part using FFmpeg drawtext. Delivers all parts as public URLs.",
+      "tags": ["split_video", "video_parts", "chunk_subtitles", "drawtext", "ffmpeg"],
+      "examples": [
+        "Split this 1-hour video into 5-minute parts with subtitles",
+        "Cut this video into 10 parts and embed the subtitles in each one"
+      ],
+      "inputModes": ["multipart/form-data", "application/json"],
+      "outputModes": ["video/mp4", "application/json"]
+    },
+    {
+      "id": "ai_generator",
+      "name": "Gemini AI Text/Code Generation",
+      "description": "Gemini-powered text and code generation: research memos with citations, translation, code review and long-form content writing, with up to 200,000 input characters.",
+      "tags": ["gemini", "llm", "writing", "research", "code", "translation"],
+      "examples": [
+        "Write a 1000-word research memo about A2A protocol with citations",
+        "Translate this document from English to Spanish",
+        "Review this Python script and suggest improvements"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/markdown", "text/plain", "application/json"]
+    },
+    {
+      "id": "gemini_generalist",
+      "name": "Gemini Generalist / Reasoning Fallback",
+      "description": "Gemini generalist and reasoning fallback for custom-logic tasks that do not fit any specialized worker, with up to 100,000 input characters.",
+      "tags": ["reasoning", "fallback", "custom_logic"],
+      "examples": [
+        "Analyze this data and decide which worker should process it",
+        "Answer this multi-step reasoning question"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/markdown", "text/plain", "application/json"]
+    }
+  ],
+  "output_delivery": {
+    "public_storage": "supabase",
+    "bucket": "media-outputs",
+    "delivers_public_urls": true,
+    "workers_with_file_output": [
+      "media_worker",
+      "subtitles_worker",
+      "split_subtitles_worker"
+    ],
+    "workers_with_text_output": [
+      "url_worker",
+      "archive_worker",
+      "document_worker",
+      "ai_worker",
+      "gemini_generalist_worker"
+    ],
+    "response_fields": [
+      "output.files[]",
+      "output.urls[]"
+    ]
+  },
+  "task_type_aliases": {
+    "url_worker": "url",
+    "archive_worker": "archive",
+    "document_worker": "document",
+    "media_worker": "media",
+    "subtitles_worker": "subtitles",
+    "split_subtitles_worker": "split_subtitles",
+    "ai_worker": "ai",
+    "gemini_generalist_worker": "gemini_generalist",
+    "chunk_subtitles": "split_subtitles",
+    "video_parts_subtitles": "split_subtitles",
+    "subtitles_split": "split_subtitles"
+  },
+  "registrations": {
+    "agentbazaar": {
+      "agent_id": "ag_ccaff5f9",
+      "listing": "Dealwork-MegaWorkers-v2",
+      "status": "active"
+    },
+    "globalchat": {
+      "registry_id": 201,
+      "name": "dealwork-megaworkers",
+      "status": "active"
+    },
+    "openagent_xmtp": {
+      "skills_published": 8,
+      "status": "active"
+    },
+    "clustly": {
+      "version": "3.1",
+      "status": "supervisor_active"
+    }
+  },
+  "securitySchemes": {
+    "hmac_signature": {
+      "type": "apiKey",
+      "location": "header",
+      "name": "X-AgenticMarket-Signature",
+      "description": "Optional HMAC-SHA256 request signature: v1=hex(HMAC-SHA256(ts + body)) sent in X-AgenticMarket-Signature with the timestamp in X-AgenticMarket-Timestamp. Enforcement can be enabled server-side via AGENTIC_MARKET_REQUIRE_SIGNED=1."
+    }
+  },
+  "security": [
+    {},
+    { "hmac_signature": [] }
+  ],
+  "security_notes": {
+    "auth": "open (A2A public layer)",
+    "optional_hmac_signature": {
+      "enabled": false,
+      "headers": [
+        "X-AgenticMarket-Signature",
+        "X-AgenticMarket-Timestamp"
+      ],
+      "scheme": "HMAC-SHA256 v1=hex(ts.body)",
+      "note": "Enable via AGENTIC_MARKET_REQUIRE_SIGNED=1"
+    },
+    "output_sanitization": "secrets stripped from all results"
+  },
+  "technical_specs": {
+    "total_workers": 8,
+    "thread_model": "daemon-threads",
+    "uptime_target": "24/7",
+    "global_rate_limit_rpm": 120,
+    "max_concurrent_tasks": 10,
+    "max_task_timeout_seconds": 300,
+    "supports_streaming": false,
+    "supports_push_notifications": true,
+    "maintains_state_history": true,
+    "input_formats": [
+      "application/json",
+      "multipart/form-data",
+      "text/plain"
+    ]
+  },
+  "seo": {
+    "keywords": [
+      "pdf-to-markdown",
+      "pdf-extractor",
+      "audio-extractor",
+      "ffmpeg-transcoder",
+      "python-execution",
+      "code-sandbox",
+      "web-scraper",
+      "bulk-url-checker",
+      "csv-to-json",
+      "zip-extractor",
+      "ai-researcher",
+      "data-parser",
+      "media-processing",
+      "gemini-ai",
+      "token-optimization",
+      "a2a-agent",
+      "omnitask-agent",
+      "multi-worker",
+      "x402-merchant",
+      "payai",
+      "video-subtitles",
+      "video-splitter",
+      "srt-generator",
+      "presentation-generator",
+      "book-writer",
+      "bot-builder",
+      "website-generator",
+      "apk-code-generator"
+    ],
+    "intents": [
+      "convert_document",
+      "extract_audio",
+      "transcode_media",
+      "run_python_code",
+      "scrape_urls",
+      "analyze_data",
+      "unzip_archive",
+      "generate_content",
+      "research_topic",
+      "bulk_url_check",
+      "translate_text",
+      "review_code",
+      "generate_subtitles",
+      "split_video"
+    ],
+    "use_cases": [
+      "Bulk URL validation for SEO audits",
+      "PDF to Markdown conversion for RAG pipelines",
+      "Media preprocessing to reduce LLM token cost",
+      "Automatic video subtitling and video splitting",
+      "Automated research memos with citations",
+      "Pay-per-task x402 micropayments via PayAI"
+    ]
+  },
+  "documentationUrl": "https://practical-ambition-production.up.railway.app/docs",
+  "signatures": [
+    {
+      "protected": "eyJhbGciOiJFUzI1NiIsImprdSI6Imh0dHBzOi8vcHJhY3RpY2FsLWFtYml0aW9uLXByb2R1Y3Rpb24udXAucmFpbHdheS5hcHAvLndlbGwta25vd24vandrcy5qc29uIiwia2lkIjoiQVhCQk9nYnREM0M5bG5ZbSIsInR5cCI6IkpPU0UifQ",
+      "signature": "6RBWGoqLcVPlP8ro4VidK5GrmIHw1UHXEMe9Fp_jdmKw6EzVKojg7NPT6-S0MAJOAPypqsiAXS9zG2Xog27PoA"
+    }
+  ]
+}
