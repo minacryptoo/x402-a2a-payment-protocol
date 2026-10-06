@@ -1,3 +1,4 @@
+[![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
 # PayAI (A2A 402x Protocol) — Agent-to-Agent Payment & Monetization Protocol
 ![Version](https://img.shields.io/badge/protocol-A2A_402x-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -18,8 +19,6 @@
 ![Solana](https://img.shields.io/badge/Chain-Solana-14F195?style=for-the-badge&logo=solana&logoColor=black)
 ![Polygon](https://img.shields.io/badge/Chain-Polygon-8247E5?style=for-the-badge&logo=polygon&logoColor=white)
 ![Lightning Network](https://img.shields.io/badge/Payment-Lightning_Network-F7931A?style=for-the-badge&logo=lightning&logoColor=white)
-
-[![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
 
 > Protocolo estándar para pagos autónomos e interacciones Agent-to-Agent (A2A) utilizando el estado HTTP 402x.
 
