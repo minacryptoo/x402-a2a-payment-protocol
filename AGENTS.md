@@ -19,6 +19,8 @@
 ![Polygon](https://img.shields.io/badge/Chain-Polygon-8247E5?style=for-the-badge&logo=polygon&logoColor=white)
 ![Lightning Network](https://img.shields.io/badge/Payment-Lightning_Network-F7931A?style=for-the-badge&logo=lightning&logoColor=white)
 
+[![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
+
 > Protocolo estándar para pagos autónomos e interacciones Agent-to-Agent (A2A) utilizando el estado HTTP 402x.
 
 
