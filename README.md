@@ -1,3 +1,4 @@
+[![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
 # PayAI (A2A 402x Protocol) — Agent-to-Agent Payment & Monetization Protocol
 ![Version](https://img.shields.io/badge/protocol-A2A_402x-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
