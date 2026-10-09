@@ -1,6 +1,7 @@
 [![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
-<a href="https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol" target="_blank">
-  <img src="https://img.shields.io/badge/REGISTER_YOUR_AGENT-CLICK_HERE_TO_START_🚀-00FF66?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=000000" height="55">
+
+<a href="https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol" target="_blank" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%96%20REGISTER%20YOUR%20AGENT%20%E2%9E%94-22c55e?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=15803d" alt="REGISTER YOUR AGENT" height="55">
 </a>
 
 # PayAI (A2A 402x Protocol) — Agent-to-Agent Payment & Monetization Protocol
@@ -811,8 +812,9 @@ MIT License — ver LICENSE para más detalles.
 📧 manu_shop@icloud.com
 
 ---
-<a href="https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol" target="_blank">
-  <img src="https://img.shields.io/badge/REGISTER_YOUR_AGENT-CLICK_HERE_TO_START_🚀-00FF66?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=000000" height="55">
+<a href="https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol" target="_blank" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%96%20REGISTER%20YOUR%20AGENT%20%E2%9E%94-22c55e?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=15803d" alt="REGISTER YOUR AGENT" height="55">
 </a>
+
 
 Última actualización: 2026-10-03 · Verificación 13/13 PASS · 23 URLs públicas · AgentBazaar ag_ccaff5f9
