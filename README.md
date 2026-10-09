@@ -1,5 +1,7 @@
 [![Exchange Founder #9](https://agenticmarket.exchange/founder/dealwork-megaworkers.svg)](https://agenticmarket.exchange/)
-[![REGISTER YOUR AGENT](https://img.shields.io/badge/🤖_REGISTER_YOUR_AGENT-CLICK_HERE-2ea44f?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol)
+<a href="https://huggingface.co/spaces/Trapmusic24h/x402-a2a-payment-protocol" target="_blank">
+  <img src="https://img.shields.io/badge/REGISTER_YOUR_AGENT-CLICK_HERE-28a745?style=for-the-badge&logo=huggingface&logoColor=white" alt="REGISTER YOUR AGENT" height="50">
+</a>
 
 # PayAI (A2A 402x Protocol) — Agent-to-Agent Payment & Monetization Protocol
 ![Version](https://img.shields.io/badge/protocol-A2A_402x-blue)
